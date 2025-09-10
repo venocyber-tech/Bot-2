@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Bot QR Code</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WhatsApp Bot Authentication</h1>
+            <p>Scan the QR code below to connect your WhatsApp account</p>
+        </header>
+
+        <div class="status-container">
+            <div id="statusMessage" class="status waiting">
+                <div class="spinner"></div>
+                <span>Initializing WhatsApp client...</span>
+            </div>
+        </div>
+
+        <div id="qrContainer" class="qr-container hidden">
+            <h2>Scan QR Code</h2>
+            <div id="qrcode"></div>
+            <div class="instructions">
+                <h3>How to scan:</h3>
+                <ol>
+                    <li>Open WhatsApp on your phone</li>
+                    <li>Tap <strong>Settings</strong> → <strong>Linked Devices</strong> → <strong>Link a Device</strong></li>
+                    <li>Point your camera at the QR code</li>
+                    <li>Wait for connection confirmation</li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="connectedContainer" class="connected-container hidden">
+            <div class="success-icon">✅</div>
+            <h2>Successfully Connected!</h2>
+            <p>Your WhatsApp bot is now active and ready to receive messages.</p>
+            <div class="bot-info">
+                <h3>Try these commands:</h3>
+                <ul>
+                    <li><code>!hello</code> - Greet the bot</li>
+                    <li><code>!help</code> - Show available commands</li>
+                    <li><code>!time</code> - Get current time</li>
+                    <li><code>!status</code> - Check bot status</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by Heroku & whatsapp-web.js</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

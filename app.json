@@ -1,0 +1,21 @@
+{
+  "name": "WhatsApp Bot with QR Web UI",
+  "description": "WhatsApp automation bot with web-based QR code generation",
+  "repository": "https://github.com/venocyber-tech/Bot-2",
+  "logo": "https://raw.githubusercontent.com/wppconnect-team/wppconnect/main/assets/images/logo.png",
+  "keywords": ["node", "whatsapp", "bot", "automation", "heroku"],
+  "buildpacks": [
+    {
+      "url": "heroku-community/apt"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "PORT": {
+      "description": "The port where the web server will run",
+      "value": "3000"
+    }
+  }
+}
